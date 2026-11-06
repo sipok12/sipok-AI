@@ -1,0 +1,39 @@
+{
+  "name": "sipok-ai-desktop",
+  "version": "1.0.0",
+  "description": "Assistant IA personnel SIPOK AI",
+  "main": "desktop/main.js",
+  "author": "SIPOK AI",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "electron": "^45.2.3",
+    "electron-builder": "^26.0.12"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.9"
+  },
+  "overrides": {
+    "minimatch": "^11.0.1"
+  },
+  "build": {
+    "appId": "com.sipokai.desktop",
+    "productName": "SIPOK AI",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "desktop/**/*",
+      "backend/**/*",
+      "frontend/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  }
+}
